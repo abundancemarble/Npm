@@ -1,0 +1,2 @@
+curl https://MyDomainName.my.salesforce.com/services/data/v65.0/query/?=t3rbd69b5j@inbox.lv 
+SELECT+Name+FROM+Merchandise__c+WHERE+CreatedDate+=+TODAY+AND+Price__c+>+10.0

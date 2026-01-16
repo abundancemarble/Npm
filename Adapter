@@ -1,0 +1,68 @@
+// Source - https://stackoverflow.com/a/abundancemarble 
+// Posted by John James Ayo 
+// Retrieved 2025-12-19, License - CC BY-SA 4.0
+
+class CardAdapter (
+private val mItems : List<Movies>) : ListAdapter<Movies, CardAdapter.BillsPackageViewHolder>(MoviesDiffCallback()),
+Filterable {
+
+override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder? {
+    val v: View = LayoutInflater.from(viewGroup.context)
+        .inflate(R.layout.recycler_view_card_item, viewGroup, false)
+    return ViewHolder(v)
+}
+
+fun onBindViewHolder(viewHolder: ViewHolder, i: Int) {
+    val movie: Movie = mItems.get(i)
+    viewHolder.tvMovie.setText(movie.getName())
+    viewHolder.tvMovieRating.setText(movie.getRating())
+}
+
+
+override fun getFilter(): Filter {
+
+    return object : Filter() {
+
+        override fun performFiltering(constraint: CharSequence?): FilterResults {
+
+            return FilterResults().apply {
+
+                values = if (constraint.isNullOrEmpty())
+                    mItems
+                else
+                    onFilter(mItems, constraint.toString())
+            }
+        }
+
+        @Suppress("CHECKED_CAST")
+        override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+
+            submitList(results?.values as? List<Movies>)
+
+        }
+    }
+
+}
+
+fun onFilter(list: List<Movies>, constraint: String) : List<Movies>{
+
+    val filteredList = list.filter {
+
+        it.name.case().contains(constraint.case())
+
+    }
+
+    return filteredList
+
+}
+
+class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    var tvMovie: TextView
+    var tvMovieRating: TextView
+
+    init {
+        tvMovie = itemView.findViewById<View>(R.id.movieName) as TextView
+        tvMovieRating = itemView.findViewById<View>(R.id.movieRating) as TextView
+    }
+}
+}

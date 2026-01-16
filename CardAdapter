@@ -1,0 +1,87 @@
+// Source - https://stackoverflow.com/q/abundancemarble 
+// Posted by JohnJamesAyo, modified by community. See post 'Timeline' for change history
+// Retrieved 2025-12-19, License - CC BY-SA 3.0
+
+public abstract class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> implements Filterable {
+
+    List<Movie> mItems;
+
+    public CardAdapter() {
+        super();
+        mItems = new ArrayList<Movie>();
+        Movie movie = new Movie();
+        movie.setName("Spiderman");
+        movie.setRating("92");
+        mItems.add(movie);
+
+        movie = new Movie();
+        movie.setName("Doom 3");
+        movie.setRating("91");
+        mItems.add(movie);
+
+        movie = new Movie();
+        movie.setName("Transformers");
+        movie.setRating("88");
+        mItems.add(movie);
+
+        movie = new Movie();
+        movie.setName("Transformers 2");
+        movie.setRating("87");
+        mItems.add(movie);
+
+        movie = new Movie();
+        movie.setName("Transformers 3");
+        movie.setRating("86");
+        mItems.add(movie);
+
+        movie = new Movie();
+        movie.setName("Noah");
+        movie.setRating("86");
+        mItems.add(movie);
+
+        movie = new Movie();
+        movie.setName("Ironman");
+        movie.setRating("86");
+        mItems.add(movie);
+
+        movie = new Movie();
+        movie.setName("Ironman 2");
+        movie.setRating("86");
+        mItems.add(movie);
+
+        movie = new Movie();
+        movie.setName("Ironman 3");
+        movie.setRating("86");
+        mItems.add(movie);
+    }
+
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.recycler_view_card_item, viewGroup, false);
+        return new ViewHolder(v);
+    }
+
+    @Override
+    public void onBindViewHolder(ViewHolder viewHolder, int i) {
+        Movie movie = mItems.get(i);
+        viewHolder.tvMovie.setText(movie.getName());
+        viewHolder.tvMovieRating.setText(movie.getRating());
+    }
+
+    @Override
+    public int getItemCount() {
+        return mItems.size();
+    }
+
+    class ViewHolder extends RecyclerView.ViewHolder{
+
+        public TextView tvMovie;
+        public TextView tvMovieRating;
+
+        public ViewHolder(View itemView) {
+            super(itemView);
+            tvMovie = (TextView)itemView.findViewById(R.id.movieName);
+            tvMovieRating = (TextView)itemView.findViewById(R.id.movieRating);
+        }
+    }
+}

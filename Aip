@@ -1,0 +1,12 @@
+// Find your Twilio API credentials at https://www.twilio.com/user/account
+String account = 'AC23bcf5fe837d9c036b1dd99535793c97';
+String token = 'b3161748b9f8fba64032be063a550bf4';
+
+TwilioRestClient client = new TwilioRestClient(account, token);
+
+Map<String,String> params = new Map<String,String> {
+        'To'   => '+2348058196405',
+        'From' => '+12058528420',
+        'Url'  => 'http://twimlets.com/holdmusic?Bucket=com.twilio.music.ambient'
+    };
+TwilioCall call = client.getAccount().getCalls().create(params);

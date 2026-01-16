@@ -1,0 +1,19 @@
+export EMAIL="YOUR_EMAIL@example.dev"
+export GITLAB_WORKSPACES_PROXY_DOMAIN="workspaces.example.dev"
+export GITLAB_WORKSPACES_WILDCARD_DOMAIN="*.workspaces.example.dev"
+
+certbot -d "${GITLAB_WORKSPACES_PROXY_DOMAIN}" \
+  -m "${EMAIL}" \
+  --config-dir ~/.certbot/config \
+  --logs-dir ~/.certbot/logs \
+  --work-dir ~/.certbot/work \
+  --manual \
+  --preferred-challenges dns certonly
+
+certbot -d "${GITLAB_WORKSPACES_WILDCARD_DOMAIN}" \
+  -m "${EMAIL}" \
+  --config-dir ~/.certbot/config \
+  --logs-dir ~/.certbot/logs \
+  --work-dir ~/.certbot/work \
+  --manual \
+  --preferred-challenges dns certonly

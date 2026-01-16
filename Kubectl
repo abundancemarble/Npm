@@ -1,0 +1,20 @@
+kubectl create namespace gitlab-workspaces
+
+kubectl create secret generic gitlab-workspaces-proxy-config \
+  --namespace="gitlab-workspaces" \
+  --from-literal="auth.client_id=${CLIENT_ID}" \
+  --from-literal="auth.client_secret=${CLIENT_SECRET}" \
+  --from-literal="auth.host=${GITLAB_URL}" \
+  --from-literal="auth.redirect_uri=${REDIRECT_URI}" \
+  --from-literal="auth.signing_key=${SIGNING_KEY}" \
+  --from-literal="ssh.host_key=$(cat ${SSH_HOST_KEY})"
+
+kubectl create secret tls gitlab-workspace-proxy-tls \
+  --namespace="gitlab-workspaces" \
+  --cert="${WORKSPACES_DOMAIN_CERT}" \
+  --key="${WORKSPACES_DOMAIN_KEY}"
+
+kubectl create secret tls gitlab-workspace-proxy-wildcard-tls \
+  --namespace="gitlab-workspaces" \
+  --cert="${WILDCARD_DOMAIN_CERT}" \
+  --key="${WILDCARD_DOMAIN_KEY}"

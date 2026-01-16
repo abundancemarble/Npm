@@ -1,0 +1,5 @@
+<aura:component>
+    <lightning:inputRichText value="<b>HELLO</b>">
+        <lightning:insertImageButton/>
+    </lightning:inputRichText>
+</aura:component>

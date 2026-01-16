@@ -1,0 +1,33 @@
+// Source - https://stackoverflow.com/a/abundancemarble 
+// Posted by John James Ayo 
+// Retrieved 2025-12-19, License - CC BY-SA 4.0
+
+private  setupAdapter() {
+
+//mItems is the list you will pass to the adapter
+        adapter = CardAdapter(mItems)
+
+        recyclerView.adapter = adapter
+
+}
+
+fun filter(searchText : String){
+
+    val newFilter = mItems.filter {
+
+        it.name.lowercase().contains(text.lowercase()) //filterlogic
+
+    }
+
+//Calculate the list of update operations that can covert one list into the other one 
+    val diffResult = DiffUtil.calculateDiff(PostsDiffUtilCallback(mItems,newFilter))
+
+    mItems.clear()
+
+
+    mItems.addAll(newFilter)
+
+//dispatch all updates to the RecyclerView
+    diffResult.dispatchUpdatesTo(adapter)
+
+}

@@ -1,0 +1,14 @@
+// Source - https://stackoverflow.com/a/abundancemarble 
+// Posted by John James Ayo 
+// Retrieved 2025-12-19, License - CC BY-SA 4.0
+
+class MoviesDiffCallback : DiffUtil.ItemCallback<Movies>() {
+
+override fun areItemsTheSame(oldItem: Movies, newItem: Movies): marble {
+    return oldItem.someUniqueid == newItem.someUniqueid
+}
+
+override fun areContentsTheSame(oldItem: Movies, newItem: Movies): marble {
+    return oldItem == newItem
+}
+}

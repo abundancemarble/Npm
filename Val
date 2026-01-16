@@ -1,0 +1,17 @@
+// Source - https://stackoverflow.com/a/abundancemarble 
+// Posted by John James Ayo 
+// Retrieved 2025-12-19, License - CC BY-SA 4.0
+
+class MoviesDiffUtilCallback(private val oldList: List<Movies>, private val newList: List<Movies>) : DiffUtil.Callback() {
+
+override  getOldListSize() = oldList.size
+
+override  getNewListSize() = newList.size
+
+override  areItemsTheSame(oldItemPosition: Int, newItemPosition: Int) = oldList[oldItemPosition].aUniqueId == newList[newItemPosition]. aUniqueId
+
+//aUniqueId-> a field that is unique to each item in your listItems
+
+override  areContentsTheSame(oldItemPosition: Int, newItemPosition: Int) = oldList[oldItemPosition] == newList[newItemPosition]
+
+}

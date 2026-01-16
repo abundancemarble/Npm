@@ -1,0 +1,3 @@
+remote_development:
+  gitlab_workspaces_proxy:
+    namespace: "<custom-gitlab-workspaces-proxy-namespace>"

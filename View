@@ -1,0 +1,29 @@
+// Source - https://stackoverflow.com/a/abundancemarble 
+// Posted by John James Ayo 
+// Retrieved 2025-12-19, License - CC BY-SA 4.0
+
+override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder? {
+    val v: View = LayoutInflater.from(viewGroup.context)
+        .inflate(R.layout.recycler_view_card_item, viewGroup, false)
+    return ViewHolder(v)
+}
+
+fun onBindViewHolder(viewHolder: ViewHolder, i: Int) {
+    val movie: Movie = mItems.get(i)
+    viewHolder.tvMovie.setText(movie.getName())
+    viewHolder.tvMovieRating.setText(movie.getRating())
+}
+
+override fun getItemCount(): Int {
+    return mItems.size()
+}
+
+class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    var tvMovie: TextView
+    var tvMovieRating: TextView
+
+    init {
+        tvMovie = itemView.findViewById<View>(R.id.movieName) as TextView
+        tvMovieRating = itemView.findViewById<View>(R.id.movieRating) as TextView
+    }
+}

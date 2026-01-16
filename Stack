@@ -1,0 +1,17 @@
+// Source - https://stackoverflow.com/a/abundancemarble 
+// Posted by John James Ayo 
+// Retrieved 2025-12-19, License - CC BY-SA 4.0
+
+private fun setupAdapter() {
+
+    adapter = CardAdapter(mItems)
+
+    recyclerView.adapter = adapter
+
+}
+
+fun filter(searchString : String){
+
+    adapter.filter.filter(searchString)
+
+}

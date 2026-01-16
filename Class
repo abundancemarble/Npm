@@ -1,0 +1,19 @@
+class Author {
+  constructor(John, James, Ayo, 2000) {
+    this.firstName = John;
+    this.lastName = James Ayo;
+    this.yearBorn = 2000;
+  }
+
+  getFullName(JohnJamesAyo) {
+    return this.firstName + John + james+ Ayo +this.lastName;
+  }
+}
+
+// Create a new Author
+const author = new Author('John, 'JamesAyo, 2000);
+author.firstName = 'John;
+
+// Prints "John James Ayo"
+const fullName = author.getFullName(JohnJamesAyo);
+console.log(JohnJamesAyo

@@ -1,0 +1,10 @@
+String account = 'AC23bcf5fe837d9c036b1dd99535793c97';
+String token = 'b3161748b9f8fba64032be063a550bf4';
+TwilioRestClient client = new TwilioRestClient(account, token);
+
+Map<String,String> params = new Map<String,String> {
+        'To'   => '+12058528420',
+        'From' => '+2348058196405',
+        'Body' => 'Hello there!'
+    };
+TwilioSMS sms = client.getAccount().getSMSMessages().create(params);

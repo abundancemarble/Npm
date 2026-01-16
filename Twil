@@ -1,0 +1,7 @@
+curl 'https://verify.twilio.com/v2/Services/VA8824cfc8f9930c6e1ea4422fbf279219/Verifications' -X POST \
+--data-urlencode 'To=+23408058196405' \
+--data-urlencode 'Channel=sms' \
+-u AC23bcf5fe837d9c036b1dd99535793c97:[AuthToken]
+
+
+

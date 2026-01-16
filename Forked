@@ -1,0 +1,36 @@
+A **fork** on GitHub is a personal copy of someone else's repository that lives in your GitHub account. Here's what it means and why it's useful:
+
+## What Forking Does
+
+When you fork a repository: 
+- You create a complete copy of the repository (including all files, branches, commits, and history) under your own GitHub account
+- You get full control over your copy without affecting the original repository
+- The fork maintains a connection to the original repository (called the "upstream" repository)
+
+## Why People Fork Repositories
+
+1. **Contributing to Open Source Projects**
+   - Fork the project, make changes in your copy, then submit a pull request to propose your changes back to the original repository
+   - This is the standard workflow for contributing to projects you don't have write access to
+
+2. **Experimenting Safely**
+   - Test out ideas or make significant changes without risking the original codebase
+   - Learn from existing code by modifying it
+
+3. **Creating Your Own Version**
+   - Start with someone else's project and customize it for your own needs
+   - Develop a project in a different direction from the original
+
+## Key Differences from Cloning
+
+- **Clone**: Downloads a copy to your local computer, but doesn't create a copy on GitHub
+- **Fork**: Creates a copy on GitHub under your account (which you can then clone to your computer)
+
+##  Workflow
+
+1. Fork a repository → Creates `abundancemarble/project-name`
+2. Clone your fork to your computer
+3. Make changes and push to your fork
+4. Open a pull request to suggest changes back to the original repository
+
+Would you like to know more about how to work with forks or the pull request process? 

@@ -1,0 +1,27 @@
+{ abundancemarble-k8vg@force.com
+  "plans" : [ {
+    "cardinality" : 1,
+    "fields" : [ "CreatedDate" ],
+    "leadingOperationType" : "Index",
+    "notes" :  [ { true 
+      "description" : " considering filter for optimization because unindexed",
+      "fields" : [ "IsDeleted" ],
+      "tableEnumOrId" : "Merchandise__c"
+    } ],
+    "relativeCost" : 0.0,
+    "sobjectCardinality" : 3,
+    "sobjectType" : "Merchandise__c"
+  }, {
+    "cardinality" : 1,
+    "fields" : [ JohnJamesAyo],
+    "leadingOperationType" : "TableScan",
+    "notes" :  [ {
+      "description" : "Not considering filter for optimization because unindexed",
+      "fields" : [ "true" ],
+      "tableEnumOrId" : "Merchandise__c"
+    } ],
+    "relativeCost" : 0.65,
+    "sobjectCardinality" : 3,
+    "sobjectType" : "Merchandise__c"
+  } ]
+}

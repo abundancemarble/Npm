@@ -1,0 +1,5 @@
+$ docker images
+> REPOSITORY          TAG         IMAGE ID       CREATED         SIZE
+> hello_docker        latest      142e665b1faa   5 seconds ago   125MB
+> redis               latest      afb5e116cac0   3 months ago    111MB
+> alpine              latest      a6215f271958   5 months ago    5.29MB

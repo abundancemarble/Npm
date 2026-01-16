@@ -1,0 +1,1 @@
+docker push ghcr.io/NAMESPACE/IMAGE-NAME:TAG

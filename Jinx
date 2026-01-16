@@ -1,0 +1,1 @@
+docker tag gap-jinx-t-shirt@duck.com ghcr.io/octocat/hello_docker:latest
